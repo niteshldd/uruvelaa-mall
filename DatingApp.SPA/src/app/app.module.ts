@@ -1,8 +1,10 @@
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from 'ngx-gallery';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -30,7 +32,7 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { MatSidenavModule } from '@angular/material';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons/buttons.module';
 import { ListsResolver } from './_resolvers/lists.resolver';
@@ -45,6 +47,7 @@ import { AuthComponent } from './auth/auth.component';
     NavComponent,
     HomeComponent,
     RegisterComponent,
+    SidenavComponent,
     MemberListComponent,
     ListsComponent,
     MessagesComponent,
@@ -56,10 +59,14 @@ import { AuthComponent } from './auth/auth.component';
     TimeAgoPipe,
     MemberMessagesComponent
 ],
+exports: [
+  MatSidenavModule,
+],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    NoopAnimationsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     AuthModule,
