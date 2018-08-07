@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.ng-sidebar {
+  background: red;
+  width: 13rem;
+}
+
+.ng-sidebar--left {
+  color: red !important;
+  background: antiquewhite;
+  width: 12rem;
+}
 .tab-panel {
     border: 1px solid #ddd;
     padding: 10px;

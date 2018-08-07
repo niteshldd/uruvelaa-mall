@@ -3,7 +3,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from 'ngx-gallery';
-
+import { SidebarModule } from 'ng-sidebar';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
@@ -38,6 +38,7 @@ import { MessagesResolver } from './_resolvers/message.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { TimeAgoPipe } from './_pipes/time-ago-pipe';
 import { AuthComponent } from './auth/auth.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -54,10 +55,12 @@ import { AuthComponent } from './auth/auth.component';
     PhotoEditorComponent,
     AuthComponent,
     TimeAgoPipe,
-    MemberMessagesComponent
+    MemberMessagesComponent,
+    SidebarComponent
 ],
   imports: [
     BrowserModule,
+    SidebarModule.forRoot(),
     CollapseModule.forRoot(),
     HttpModule,
     FormsModule,

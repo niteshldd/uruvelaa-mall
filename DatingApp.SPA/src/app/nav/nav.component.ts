@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+
   // tslint:disable-next-line:comment-format
   isCollapsed: boolean; //nav bar fixed
   model: any = {};
