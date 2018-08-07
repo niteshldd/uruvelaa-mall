@@ -9,11 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  isCollapsed = true ;
+  // tslint:disable-next-line:comment-format
+  isCollapsed: boolean; //nav bar fixed
   model: any = {};
   photoUrl: string;
 
-  constructor(public authService: AuthService, private alertify: AlertifyService, private router: Router) { }
+  constructor(public authService: AuthService, private alertify: AlertifyService, private router: Router) {
+    this.isCollapsed = true;
+  }
 
   ngOnInit() {
     this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
@@ -27,6 +30,7 @@ export class NavComponent implements OnInit {
     }, () => {
       this.router.navigate(['/members']);
     });
+    this.isCollapsed = true;
   }
 
   logout() {
@@ -36,6 +40,7 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('user');
     this.alertify.message('logged out');
     this.router.navigate(['/home']);
+    this.isCollapsed = true;
   }
 
   loggedIn() {

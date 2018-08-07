@@ -84,6 +84,6 @@ import { AuthComponent } from './auth/auth.component';
     ListsResolver,
     MessagesResolver
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ]
 })
 export class AppModule { }

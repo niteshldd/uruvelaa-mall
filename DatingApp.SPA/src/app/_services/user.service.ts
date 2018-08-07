@@ -13,8 +13,14 @@ import { Message } from '../_models/message';
 @Injectable()
 export class UserService {
   baseUrl = environment.apiUrl;
+  headers: Headers;
 
-  constructor(private authHttp: AuthHttp) {}
+  constructor(private authHttp: AuthHttp) {
+    this.headers = new Headers();
+    this.headers.append('X-Parse-Application-Id', 'AppId1');
+    this.headers.append('X-Parse-REST-API-Key', 'restAPIKey');
+    this.headers.append('X-Parse-Revocable-Session', '1');
+  }
 
   getUsers(page?: number, itemsPerPage?: number, userParams?: any, likesParam?: string) {
     const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();

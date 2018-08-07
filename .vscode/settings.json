@@ -16,7 +16,7 @@
         "mappings": [
             {
                 "source": "/DatingApp.API/bin/Debug/netcoreapp2.0/publish",
-                "target": "/"
+                "target": "/",
             }
         ],
         "host": "34.219.71.164",
